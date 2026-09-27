@@ -1,0 +1,122 @@
+@import '@fontsource/noto-sans-jp/400.css';
+@import '@fontsource/noto-sans-jp/700.css';
+
+/* Teaching palette, not an official university color specification. */
+:root {
+  --lecture-blue: #0066a6;
+  --lecture-cyan: #009edb;
+  --lecture-ink: #202b33;
+  --lecture-green: #087653;
+  --lecture-red: #b53348;
+}
+.slidev-layout {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: #fff;
+  color: var(--lecture-ink);
+  padding: 52px 64px 62px;
+  font-size: 28px;
+  line-height: 1.65;
+  letter-spacing: 0;
+  border-top: 8px solid var(--lecture-cyan);
+}
+.slidev-layout h1 {
+  font-size: 44px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: var(--lecture-blue);
+  margin: 0 0 18px;
+  letter-spacing: 0;
+}
+.slidev-layout h2 { font-size: 32px; margin: 0 0 12px; color: var(--lecture-blue); }
+.slidev-layout p { margin: 12px 0; line-height: 1.65; opacity: 1 !important; }
+.slidev-layout strong { font-weight: 700; }
+.slidev-layout a { color: #0066a6; border-bottom: 1px solid #74a4c3; }
+.slidev-layout ul, .slidev-layout ol { padding-left: 1.25em; margin: 16px 0; }
+.slidev-layout li { margin: 10px 0; padding-left: 6px; }
+.slidev-layout li::marker { color: var(--lecture-blue); font-weight: bold; }
+.slidev-layout .lead { font-size: 32px; margin: 20px 0 28px; }
+.slidev-layout .small { font-size: 22px; }
+.slidev-layout .muted { color: #58656f; }
+.slidev-layout .phase {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--lecture-blue);
+  margin: 0 0 10px;
+}
+.slidev-layout .place {
+  font-size: 22px;
+  border-left: 5px solid var(--lecture-blue);
+  padding-left: 14px;
+  margin: 16px 0;
+}
+.slidev-layout .check, .slidev-layout .warning {
+  margin-top: 24px;
+  padding: 12px 18px;
+  border-left: 5px solid var(--lecture-green);
+  background: #edf7f1;
+  font-size: 26px;
+}
+.slidev-layout .warning { border-color: var(--lecture-red); background: #fff2f3; }
+.slidev-layout .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; align-items: start; }
+.slidev-layout .photo-layout { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 34px; align-items: start; }
+.slidev-layout .photo-layout p { margin-top: 0; }
+.slidev-layout .photo { width: 100%; max-height: 390px; object-fit: contain; object-position: top left; }
+.slidev-layout .caption { font-size: 19px; line-height: 1.5; color: #58656f; margin-top: 10px; }
+.slidev-layout .flow { display: flex; align-items: center; gap: 20px; margin: 34px 0; }
+.slidev-layout .flow > .node { flex: 1; text-align: center; border-top: 4px solid var(--lecture-blue); padding: 22px 8px; background: #f1f7fa; }
+.slidev-layout .flow > .node.green { border-color: var(--lecture-green); background: #edf7f1; }
+.slidev-layout .flow > .arrow { color: var(--lecture-blue); font-size: 36px; flex: 0 0 40px; text-align: center; }
+.slidev-layout .node b { display: block; font-size: 32px; }
+.slidev-layout .node span { display: block; font-size: 23px; margin-top: 10px; }
+.slidev-layout .flow.compact .node b { font-size: 27px; }
+.slidev-layout .flow.compact .node span { font-size: 21px; }
+.slidev-layout .steps { border-top: 2px solid #c8dbe6; margin-top: 24px; }
+.slidev-layout .steps > div { display: grid; grid-template-columns: 72px 1fr; align-items: baseline; gap: 24px; padding: 18px 0; border-bottom: 1px solid #c8dbe6; }
+.slidev-layout .steps b { font-size: 36px; color: var(--lecture-blue); }
+.slidev-layout .steps p { margin: 0; }
+.slidev-layout code { font-family: 'Menlo', 'Consolas', 'Noto Sans JP', monospace; font-size: .93em; }
+.slidev-layout pre {
+  padding: 22px 26px !important;
+  border: 1px solid #ccdae3;
+  border-left: 5px solid var(--lecture-blue);
+  border-radius: 0 !important;
+  margin: 14px 0 !important;
+}
+.slidev-layout pre code { font-size: 25px !important; line-height: 1.65 !important; }
+.slidev-layout pre .line { min-height: 1.65em; }
+.slidev-layout .command-long pre code { font-size: 23px !important; }
+.slidev-layout .output {
+  font-family: 'Menlo', 'Consolas', 'Noto Sans JP', monospace;
+  font-size: 26px;
+  line-height: 1.7;
+  padding: 16px 24px;
+  background: #f3f5f6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.slidev-layout .path-tree {
+  font-family: 'Menlo', 'Consolas', 'Noto Sans JP', monospace;
+  white-space: pre;
+  font-size: 26px;
+  line-height: 1.85;
+  margin: 20px 0;
+}
+.slidev-layout .path-tree mark { background: #dceff9; color: #004d7d; padding: 3px 10px; }
+.slidev-layout pre.path-tree { padding: 0 !important; border: 0; background: none; line-height: 1.7; }
+.slidev-layout pre.output { padding: 16px 24px !important; border: 0; }
+.slidev-layout table { width: 100%; font-size: 25px; margin: 24px 0; }
+.slidev-layout th { color: var(--lecture-blue); border-bottom: 2px solid var(--lecture-blue); }
+.slidev-layout td, .slidev-layout th { padding: 14px 16px; text-align: left; }
+.slidev-layout td { border-bottom: 1px solid #d8e2e8; }
+.slidev-layout.cover { padding-top: 105px; }
+.slidev-layout.cover h1 { font-size: 62px; line-height: 1.4; margin: 24px 0; }
+.slidev-layout.cover .university { font-size: 25px; color: #58656f; }
+.slidev-layout.cover .cover-rule { width: 150px; border-top: 8px solid var(--lecture-cyan); margin: 32px 0; }
+.slidev-layout.section { padding-top: 118px; }
+.slidev-layout.section h1 { font-size: 60px; }
+.slidev-layout.section .section-number { color: var(--lecture-cyan); font-size: 80px; line-height: 1; font-weight: bold; }
+.lecture-footer { position: absolute; bottom: 18px; left: 64px; right: 64px; display: flex; justify-content: space-between; color: #65717a; font: 17px 'Noto Sans JP', sans-serif; pointer-events: none; }
+.slidev-layout .prompt { font-size: 27px; padding: 26px 18px; background: #f3f5f6; font-family: 'Consolas', 'Menlo', monospace; }
+.slidev-layout .prompt .typed { color: #005e95; font-weight: 700; border-bottom: 4px solid #009edb; }
+.slidev-layout .shot-region { position: relative; overflow: hidden; width: 100%; border: 1px solid #d8e2e8; background: white; }
+.slidev-layout .shot-region img { position: absolute; max-width: none; height: auto; }

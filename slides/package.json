@@ -1,0 +1,24 @@
+{
+  "name": "kait-programming-lecture-slides",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.12.0" },
+  "scripts": {
+    "dev": "slidev lecture01/slides.md",
+    "build": "slidev build lecture01/slides.md --out ../dist/lecture01",
+    "export": "slidev export lecture01/slides.md --output exports/lecture01-typescript-p5js.pdf",
+    "check": "node scripts/check-content.mjs"
+  },
+  "overrides": {
+    "floating-vue": "5.2.2",
+    "lodash-es": "4.18.1",
+    "dompurify": "3.4.16",
+    "image-size": "2.0.4"
+  },
+  "devDependencies": {
+    "@fontsource/noto-sans-jp": "^5.2.0",
+    "@slidev/cli": "53.0.0",
+    "@slidev/theme-default": "^0.25.0",
+    "playwright-chromium": "^1.58.0"
+  }
+}

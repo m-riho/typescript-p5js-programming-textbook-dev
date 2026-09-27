@@ -15,6 +15,7 @@
 | `typescript-p5/` | 学生向けにも配付する実行プロジェクト |
 | `typescript-p5/listings/` | 章ごとのサンプルプログラム |
 | `typescript-p5/workspace/` | 学生の練習・課題用フォルダのひな形 |
+| `slides/` | 教員向けSlidevスライド、講師ノート、投影用画像 |
 
 `figures/` は本文用の図版です。プログラムが読み込む画像などは `typescript-p5/` 内の各章で指定された場所に置きます。
 Processing版の参照原稿、制作途中のメモ、非公開の作業用ファイルは含めていません。
@@ -30,6 +31,22 @@ npm run dev
 ```
 
 `index.html` の既存の `script` 要素の `src` を、たとえば `/listings/chapter02/points-and-lines.ts` に変更するとサンプルを実行できます。学生が用いる実行パスと同じです。実行後は配付用の初期状態を確認し、個人の実験用コードや `node_modules/`、`dist/` はコミットしません。
+
+## 授業用スライド
+
+第1章のスライドは `slides/` で管理しています。起動・PDF出力・確認方法は
+[スライドのREADME](slides/README.md)を参照してください。
+Node.js 22.12以上を用意し、次のコマンドで起動できます。
+
+```console
+cd slides
+npm ci
+npm run dev
+```
+
+スライドのソースと生成PDFは学生向けリポジトリ・Releaseには含めません。
+`node_modules/`、ビルド結果、PDF、検証画像はコミットしません。
+この教員向けリポジトリはPublicのため、閲覧権限を教員だけに制限するものではありません。
 
 ## PDFの組版
 

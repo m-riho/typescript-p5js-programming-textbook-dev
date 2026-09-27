@@ -1,0 +1,13 @@
+# Dependencies, generated slides/PDFs, and browser inspection output
+/node_modules/
+/dist/
+/exports/
+.slidev/
+.vite/
+/qa/
+*.pdf
+*.log
+# Local settings must not be published with the teacher sources
+.env
+.env.*
+!.env.example
