@@ -276,7 +276,6 @@ PCを変える場合には準備が必要。既にインストール済みなら
 <div class="node green"><b>確認</b><span>アプリを起動する<br>命令が使えるか調べる</span></div>
 </div>
 
-<p class="warning">学校の管理PCで許可が必要な場合は、担当者に相談してください。</p>
 
 <!--
 ダウンロードが終わっただけでは未完了。Windows 11を想定し、画面やバージョンは時期により異なると説明。
@@ -411,7 +410,6 @@ Windowsの検索欄に <code>vscode</code> と入力します。
 <div>
 <p><strong>Windows Installer<br>（.msi）</strong>を選びます。</p>
 <p>Dockerの命令は<br>今回は使いません。</p>
-<p class="small">一般的なIntel/AMDのPCはx64。ARMのPCは担当者と確認します。</p>
 </div>
 </div>
 
@@ -452,7 +450,7 @@ Windowsの検索欄に <code>vscode</code> と入力します。
 
 <!--
 Windows Installerの標準設定を使用。ネイティブモジュール向けの追加ツールは今回不要。
-管理者の許可が求められ、自分で判断できない場合は担当者へ。
+管理者の許可が求められ、自分で判断できない場合は先生に相談してください。
 参考: https://nodejs.org/en/download
 -->
 
@@ -589,7 +587,7 @@ npm.ps1のエラーは補足へ。安全設定を一括で緩めることはし�
 <Shot src="/figures/git-install.png" alt="Git for Windows x64 Setupへのリンクを示した画面" size="960 1661" region="250 905 680 325" :max-height="300" />
 
 <p><strong>Git for Windows/x64 Setup</strong>を選びます。</p>
-<p class="small">ARMのパソコンはARM64版です。分からない場合は担当者に確認してください。</p>
+<p class="small">ARMのパソコンはARM64版です。分からない場合は先生に相談してください。</p>
 
 <!--
 Portable版ではなくSetup版。Windowsの設定→システム→バージョン情報でシステムの種類を確認できる。
@@ -623,7 +621,7 @@ from 3rd-party software</pre>
 
 <p>Gitを、PowerShellやVS Codeからも利用できるようにする設定です。</p>
 <p>そのほかは、基本的に標準設定のまま進めます。</p>
-<p class="warning">選択肢が違う・判断できない場合は、その画面で担当者に相談してください。</p>
+<p class="warning">選択肢が違う・判断できない場合は、その画面で先生に相談してください。</p>
 
 <!--
 画面写真ではなく確認する文字列。Git for WindowsのPATH設定の推奨の既定項目。
@@ -1284,7 +1282,7 @@ class: section
 </div>
 
 <p>VS Codeで原本を選び <strong>Ctrl + C</strong>。<br>同じ <code>typescript-p5</code> 内の <code>workspace</code> を選び <strong>Ctrl + V</strong>。</p>
-<p class="small">同名の自分のファイルが既にある場合は、上書きせず担当者に相談してください。</p>
+<p class="small">同名の自分のファイルが既にある場合は、上書きせず先生に相談してください。</p>
 
 <!--
 ドラッグで移動して原本が消える事故を避ける。コピーを使う。
@@ -1361,7 +1359,7 @@ git config --global user.email "taro@example.com"
 
 <p><code>Taro Student</code> と <code>taro@example.com</code> を、<strong>自分の情報</strong>に置き換えます。</p>
 <p class="small">メールは授業で利用してよいものを使います。引用符は残します。</p>
-<p class="warning">共用PCでは個人設定を勝手に変更せず、担当者に確認してください。</p>
+<p class="warning">共用PCでは個人設定を勝手に変更せず、先生に確認してください。</p>
 
 <!--
 自分専用のPCを前提に--globalを示す。認証やGitHubアカウント作成ではない。
@@ -1405,7 +1403,7 @@ git statusでこの2ファイルの変更があることを確認してからadd
 <div class="steps">
 <div><b>1</b><p>インストーラーが完了したことを確かめる</p></div>
 <div><b>2</b><p>VS Codeをすべて閉じて開き直し、新しいターミナルで試す</p></div>
-<div><b>3</b><p>直らなければ、エラーメッセージを残して担当者に相談する</p></div>
+<div><b>3</b><p>直らなければ、エラーメッセージを残して先生に確認して下さい。</p></div>
 </div>
 
 <p class="small">必要に応じてWindowsを再起動します。自己判断でPATHを大量に書き換えません。</p>
@@ -1421,7 +1419,7 @@ PCの管理ポリシーによる制約とインストール忘れを分ける。
 
 「スクリプトの実行が無効」と出た場合は、実行ポリシーが関係することがあります。
 
-<p>担当者に画面を見せ、許可された環境では次の方法を試します。</p>
+<p>先生に画面を見せて、相談して下さい。</p>
 
 ~~~powershell
 npm.cmd -v
@@ -1473,10 +1471,10 @@ ls package.json
 | 別のサンプルが表示される | index.htmlのsrcが、目的のファイルか |
 | 変更が反映されない | 編集したファイルが実行先と同じか。保存したか |
 
-<p class="warning">直らないときは、画面を閉じずに担当者に見せてください。</p>
+<p class="warning">直らないときは、画面を閉じずに先生に相談して下さい。</p>
 
 <!--
-DevToolsは今すぐ全員に教えなくてよい。担当者が必要時にConsoleのエラーを確認。
+DevToolsは今すぐ全員に教えなくてよい。必要時にConsoleのエラーを確認。
 空白の画面をインストール失敗と決めつけない。
 -->
 
