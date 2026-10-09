@@ -7,7 +7,18 @@
     "dev": "slidev lecture01/slides.md",
     "build": "slidev build lecture01/slides.md --out ../dist/lecture01",
     "export": "slidev export lecture01/slides.md --output exports/lecture01-typescript-p5js.pdf",
-    "check": "node scripts/check-content.mjs"
+    "check": "node scripts/check-content.mjs",
+    "dev:lecture02": "slidev lecture02/slides.md",
+    "build:lecture02": "slidev build lecture02/slides.md --out ../dist/lecture02",
+    "export:lecture02": "slidev export lecture02/slides.md --output exports/lecture02-drawing-shapes.pdf",
+    "check:lecture02": "node scripts/check-lecture02.mjs",
+    "capture:lecture02": "node scripts/capture-lecture02.mjs",
+    "dev:lecture03": "slidev lecture03/slides.md",
+    "build:lecture03": "slidev build lecture03/slides.md --out ../dist/lecture03",
+    "export:lecture03": "slidev export lecture03/slides.md --output exports/lecture03-color-and-style.pdf",
+    "check:lecture03": "node scripts/check-lecture03.mjs",
+    "check:demos:lecture03": "node scripts/check-lecture03-demos.mjs",
+    "capture:lecture03": "node scripts/capture-lecture03.mjs"
   },
   "overrides": {
     "floating-vue": "5.2.2",

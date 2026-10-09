@@ -18,6 +18,96 @@
 一度の授業で全て投影する前提ではありません。34または49で区切れます。
 各スライド末尾のHTMLコメントは講師用ノートです。本文の長い説明を投影面へ詰め込まず、ノートを併用してください。
 
+## 第2章の構成
+
+第1章の準備が済んだ学生を対象にした「図形を描く」です。本編52枚と補足4枚で、インストールや教材の再取得は行いません。
+小さな変更を予想してから実行し、結果と比較する流れです。1回ですべて投影する必要はなく、34ページの図形の練習で区切れます。
+
+| ページ | 内容 |
+| --- | --- |
+| 1–3 | 完成例と目標 |
+| 4–9 | 実習の再開、実行先選択、workspaceへのコピー |
+| 10–14 | スケッチの外枠、JavaScriptの短い復習 |
+| 15–23 | 座標、点・線・太さ、確認と練習 |
+| 24–34 | 円・楕円・長方形、引数と基準位置、練習 |
+| 35–39 | 三角形・四角形と頂点 |
+| 40–48 | 描画順、顔を部品に分ける説明 |
+| 49–52 | 顔の変更、小さな制作、まとめ |
+| 53–56 | 反映されない・図形が見えない・記号の間違い・終了 |
+
+`slides/` で次を実行します。既存の第1章用コマンドは変更していません。
+
+```sh
+npm run dev:lecture02 -- --port 3033
+npm run check:lecture02
+npm run build:lecture02
+npm run export:lecture02 -- --timeout 90000 --wait 1500
+```
+
+- 本文・講師ノート: `lecture02/slides.md`
+- 図: `lecture02/components/ShapeDiagram.vue`（座標・引数の編集可能な図）
+- 実行結果: `lecture02/public/figures/`（21枚、複数ページで比較用に再使用）
+- 教員用PDF: `exports/lecture02-drawing-shapes.pdf`（Git管理対象外）
+- Web用ビルド: `dist/lecture02/`（Git管理対象外）
+
+第2章用の全ページ確認と、実行画面の再撮影:
+
+```sh
+node scripts/verify-slides.mjs http://localhost:3033 lecture02
+npm run capture:lecture02
+```
+
+再撮影は、教材側 `typescript-p5/node_modules` の導入済み環境で実行します。元サンプル5本と説明用の変更例をメモリ上で型チェックして実行し、元ファイルや `index.html` は変更しません。
+検査画像・報告は `qa/lecture02/` に保存します。Windowsの操作自体はmacOSで再実行したわけではなく、授業前にWindows実機でも確認してください。
+
+## 第3章の構成
+
+「色と見た目を変える」は本編52枚と補足10枚です。色の指定と描画を区別し、設定が残ることと透明度を段階図・比較画像で説明します。
+準備済みの学生は本編から進み、教材未取得の場合だけ53–59ページを参照します。インストール自体は第1章を利用します。
+
+| ページ | 内容 |
+| --- | --- |
+| 1–8 | 完成例、実習の再開、コピーと実行先、コードの外枠 |
+| 9–17 | RGBと灰色、背景色、確認問題、RGBデモ（12ページ） |
+| 18–29 | 塗り・枠線・太さ、noFill/noStrokeと戻し方 |
+| 30–36 | 設定の持続、実行順の図解、変更前後の比較 |
+| 37–44 | アルファ値、不透明度デモ（38ページ）、重ねる順番、半透明の模様 |
+| 45–52 | 色付きの顔、配色の制作、まとめ |
+| 53–59 | 未取得者向けのGitHub取得・npm準備・サーバ起動 |
+| 60–62 | 変更が反映されない・図形が見えない・作業終了 |
+
+`slides/` で実行します。第1・2章の起動方法は変わりません。
+
+```sh
+npm run dev:lecture03 -- --port 3034
+npm run check:lecture03
+npm run build:lecture03
+npm run export:lecture03 -- --timeout 90000 --wait 1500
+```
+
+- 本文・講師用ノート: `lecture03/slides.md`
+- 説明図: `lecture03/components/ColorDiagram.vue`
+- 操作デモ: `lecture03/components/ColorDemo.vue`（RGB・アルファ値と表示コードが連動）
+- 画像の撮影条件・比較用コード: `lecture03/capture-cases.mjs`
+- 実行画像30枚: `lecture03/public/figures/`
+- 教員用PDF: `exports/lecture03-color-and-style.pdf`（Git管理対象外）
+- Web用ビルド: `dist/lecture03/`（Git管理対象外）
+
+```sh
+npm run capture:lecture03
+npm run check:demos:lecture03
+node scripts/verify-slides.mjs http://localhost:3034 lecture03
+```
+
+デモ検査は3034番のSlidevサーバを起動した状態で実行します。別ポートなら `npm run check:demos:lecture03 -- http://localhost:PORT` を指定します。
+スライダー・色見本・不透明度の比較ボタン、キーボード操作、表示色の画素値、デスクトップとモバイルの表示範囲を確認します。
+PDFにはRGBが(255, 80, 0)、アルファ値が128の初期状態を収録します。PDF上では操作できません。
+
+再撮影は教材側の依存関係も導入済みの環境で行います。8本の元サンプルと比較用の例を型チェックし、ブラウザで実行して撮影します。
+RGB・設定の持続・アルファ合成は、中心の画素値も検査します。元の教材ファイルと `index.html` は書き換えません。
+検査結果は `qa/lecture03/` へ保存します。Windowsでのフォルダ操作やPowerShellの手順は、授業前に実機でも確認してください。
+第3章も教員向け `-dev` で管理し、学生向けリポジトリ・Releaseにスライドは追加しません。
+
 ## 起動
 
 このREADMEがある `slides/` で実行します。Node.js 22.12以上（現行LTS推奨）が必要です。
@@ -101,7 +191,7 @@ Slidev起動中に次を実行すると、全ページをChromiumで撮影して
 node scripts/verify-slides.mjs http://localhost:3031
 ```
 
-結果は `slides/qa/` に保存します。自動検査だけでなく、画像の内容・図の接続・文字の重なりも目視確認してください。
+結果は `slides/qa/lecture01/` に保存します。自動検査だけでなく、画像の内容・図の接続・文字の重なりも目視確認してください。
 実行画面を撮り直す場合は、学生用 `typescript-p5/` の依存関係も導入したうえで、`node scripts/capture-samples.mjs` を実行します。
 撮影では元の `index.html` やサンプルを書き換えません。開いた一時サーバとブラウザは終了します。
 

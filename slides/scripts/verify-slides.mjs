@@ -7,9 +7,11 @@ import { parse } from '@slidev/parser';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const origin = process.argv[2] || 'http://localhost:3031';
-const output = path.join(root, 'qa');
+const lecture = process.argv[3] || 'lecture01';
+assert.match(lecture, /^lecture\d{2}$/);
+const output = path.join(root, 'qa', lecture);
 fs.mkdirSync(output, { recursive: true });
-const { slides } = await parse(fs.readFileSync(path.join(root, 'lecture01/slides.md'), 'utf8'));
+const { slides } = await parse(fs.readFileSync(path.join(root, lecture, 'slides.md'), 'utf8'));
 const browser = await chromium.launch({ headless: true });
 const errors = new Set();
 const warnings = new Set();
@@ -33,7 +35,7 @@ try {
     const issues = await current.evaluate(element => {
       const results = [];
       const bounds = element.getBoundingClientRect();
-      for (const item of element.querySelectorAll('h1,h2,p,pre,table,.path-tree,.output,.prompt,.flow,.steps,.photo,.shot-region')) {
+      for (const item of element.querySelectorAll('h1,h2,p,pre,table,.path-tree,.output,.prompt,.flow,.steps,.photo,.shot-region,.diagram,.result')) {
         const box = item.getBoundingClientRect();
         if (!box.width || !box.height) continue;
         if (box.bottom > bounds.top + 662 || box.right > bounds.right - 30 || box.left < bounds.left + 25) {
